@@ -1,0 +1,130 @@
+.calHeader {
+  :global {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px 8px;
+    .outLeft {
+      display: flex;
+      align-items: center;
+      .innerNavBox {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        border: 1px solid rgba(0, 0, 34, 0.06);
+        border-radius: 4px;
+      }
+      .innerLeft {
+        padding: 0 4px;
+        font-size: 14px;
+        cursor: pointer;
+        color: rgba(0, 0, 34, 0.85);
+        height: 24px;
+        line-height: 24px;
+        border-radius: 4px;
+        &:hover {
+          background: rgba(14, 62, 118, 0.05);
+        }
+      }
+      .separate {
+        margin: 0 4px;
+        width: 1px;
+        height: 12px;
+        background: rgba(0, 0, 34, 0.06);
+      }
+      .innerRight {
+        display: flex;
+        align-items: center;
+        .innerNavPrev,
+        .innerNavNext {
+          user-select: none;
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 4px;
+          &:hover {
+            background: rgba(14, 62, 118, 0.05);
+          }
+        }
+      }
+      .innerTimeBox {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-left: 16px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        height: 28px;
+        padding: 0 4px 0 8px;
+        color: rgba(0, 0, 34, 0.91);
+        border-radius: 4px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: rgba(14, 62, 118, 0.05);
+        }
+        &.isBefore {
+          color: rgba(0, 0, 34, 0.5);
+        }
+        .datePicker {
+          visibility: hidden;
+          height: 100%;
+          padding: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          position: absolute;
+        }
+
+        .innerTime {
+          margin-right: 8px;
+        }
+        .innerToday {
+          position: relative;
+          margin-left: 10px;
+          padding-left: 8px;
+          &::before {
+            content: '';
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 34, 0.06);
+            position: absolute;
+            width: 1px;
+            height: 12px;
+          }
+        }
+      }
+    }
+    .outRight {
+      display: flex;
+      align-items: center;
+      .innerTypeBox {
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 34, 0.05);
+        border-radius: 4px;
+        padding: 4px;
+        gap: 4px;
+        color: #7f8798;
+        .innerTypeItem {
+          cursor: pointer;
+          &.active {
+            background-color: #fff;
+            color: #006bd6;
+          }
+          padding: 0 5px;
+          height: 24px;
+          line-height: 24px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

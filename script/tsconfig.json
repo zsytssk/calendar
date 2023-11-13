@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "target": "es6",
+    "watch": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "strict": true
+  },
+  "ts-node": {
+    "esm": true
+  }
+}

@@ -1,0 +1,25 @@
+.dataRender {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.2);
+  user-select: none;
+  :global {
+    .resizeTop {
+      position: absolute;
+      top: 0;
+      cursor: row-resize;
+      height: 5px;
+      left: 0;
+      width: 100%;
+    }
+    .resizeBottom {
+      position: absolute;
+      bottom: 0;
+      cursor: row-resize;
+      height: 5px;
+      left: 0;
+      width: 100%;
+    }
+  }
+}

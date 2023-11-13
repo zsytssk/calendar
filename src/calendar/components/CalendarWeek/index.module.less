@@ -1,0 +1,215 @@
+.calendarWeek {
+  :global {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: auto;
+    .calHead {
+      position: relative;
+      z-index: 10;
+      padding-right: 4px;
+      // box-shadow: 0 0px 10px rgb(0 0 0 / 10%);
+      min-height: 52px;
+      display: flex;
+      border-bottom: 1px solid rgba(0, 0, 34, 0.06);
+      .calHeadTime {
+        box-sizing: border-box;
+        width: 56px;
+        padding: 8px 8px 8px 0;
+        font-size: 12px;
+        color: rgba(0, 0, 34, 0.5);
+        padding-right: 8px;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .label {
+          width: 100%;
+          text-align: right;
+        }
+      }
+      .calHeadBox {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        .calHeadList {
+          display: flex;
+          flex: 1;
+          .calHeadItem {
+            border-left: 1px solid rgba(0, 0, 34, 0.06);
+            height: 100%;
+            flex: 1;
+            padding-left: 16px;
+            font-size: 12px;
+            color: rgba(0, 0, 34, 0.5);
+            .dayNum {
+              font-size: 20px;
+              line-height: 24px;
+              color: rgba(0, 0, 34, 0.5);
+            }
+          }
+        }
+      }
+    }
+    .calBody {
+      flex: 1;
+      overflow: auto;
+      position: relative;
+      &::-webkit-scrollbar {
+        width: 4px;
+        // position: absolute;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        width: 4px;
+        height: 4px;
+        background: rgba(0, 0, 0, 0);
+        border-radius: 2px;
+      }
+      &:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.25);
+      }
+      .calBodyRow {
+        // padding: 0 16px;
+        flex: 1;
+        display: flex;
+        height: 80px;
+        .calBodyTime {
+          position: relative;
+          width: 56px;
+          height: 100%;
+          padding-right: 8px;
+          text-align: right;
+          box-sizing: border-box;
+          .label {
+            font-size: 12px;
+            margin-top: -12px;
+            color: rgba(0, 0, 34, 0.5);
+          }
+        }
+        .calBodyItem {
+          box-sizing: border-box;
+          padding: 11px;
+          display: flex;
+          flex-direction: column;
+          font-size: 18px;
+          height: 100%;
+          flex: 1;
+          color: rgba(0, 0, 34, 0.85);
+          transition: background ease-in 0.3s;
+          background: #fff;
+          border-left: 1px solid rgba(0, 0, 34, 0.06);
+          &:hover {
+            background: rgba(0, 0, 0, 0.04);
+          }
+          border-bottom: 1px dashed rgba(0, 0, 34, 0.06);
+        }
+      }
+      .bgBox {
+        position: relative;
+        .calDataZoneBox {
+          position: absolute;
+          width: calc(100% - 56px);
+          left: 56px;
+          top: 0;
+          height: 100%;
+          .calDataZone {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            .calDataZoneItem {
+              flex: 1;
+              height: 100%;
+              position: relative;
+              .dateItem {
+                position: absolute;
+              }
+            }
+          }
+          .curTimeLine {
+            position: absolute;
+            height: 1px;
+            left: 0;
+            width: 100%;
+            background-color: #ffd1cc;
+            .time {
+              height: 1px;
+              right: 0;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              background-color: #e54545;
+              &::after {
+                background-color: #e54545;
+                border-radius: 8px;
+                content: '';
+                position: absolute;
+                left: -8px;
+                width: 8px;
+                height: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+              .txt {
+                color: #e54545;
+                background-color: rgba(255, 255, 255, 1);
+                position: absolute;
+                top: 50%;
+                transform: translate(-100%, -50%);
+                padding-right: 10px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.headRender {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  :global {
+    .crossDayBox {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 5px;
+      .crossDayItem {
+        position: absolute;
+        height: 24px;
+        margin-top: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .calHeadList {
+      display: flex;
+      flex: 1;
+      .calHeadItem {
+        box-sizing: border-box;
+        position: relative;
+        border-left: 1px solid rgba(0, 0, 34, 0.06);
+        height: 100%;
+        flex: 1;
+        padding-left: 16px;
+        font-size: 12px;
+        color: rgba(0, 0, 34, 0.5);
+        .dayNum {
+          font-size: 20px;
+          line-height: 24px;
+          color: rgba(0, 0, 34, 0.5);
+        }
+      }
+    }
+  }
+}
